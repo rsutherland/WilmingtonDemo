@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customTabs>
+        <label><!-- AZ QA --></label>
+        <name>AZ_QA</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- QA Setup --></label>
+        <name>QA_Setup</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- TEST WEB --></label>
+        <name>TEST_WEB</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- TEST WEB 2 --></label>
+        <name>TEST_WEB_2</name>
+    </customTabs>
+    <quickActions>
+        <label><!-- LogACall --></label>
+        <name>LogACall</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewAccount --></label>
+        <name>NewAccount</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewCase --></label>
+        <name>NewCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewContact --></label>
+        <name>NewContact</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewEvent --></label>
+        <name>NewEvent</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewGroup --></label>
+        <name>NewGroup</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewLead --></label>
+        <name>NewLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewNote --></label>
+        <name>NewNote</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewOpportunity --></label>
+        <name>NewOpportunity</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewTask --></label>
+        <name>NewTask</name>
+    </quickActions>
+    <reportTypes>
+        <description><!-- AZQA --></description>
+        <label><!-- AZQA --></label>
+        <name>AZQA</name>
+        <sections>
+            <label><!-- Questions &amp; Answers --></label>
+            <name>Questions &amp; Answers</name>
+        </sections>
+        <sections>
+            <label><!-- Questions &amp; Answers (Answer Supplied) --></label>
+            <name>Questions &amp; Answers (Answer Supplied)</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- TEST --></description>
+        <label><!-- TEST --></label>
+        <name>TEST</name>
+        <sections>
+            <label><!-- Accounts --></label>
+            <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Opportunities --></label>
+            <name>Opportunities</name>
+        </sections>
+        <sections>
+            <label><!-- Products --></label>
+            <name>Products</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Users - RS --></description>
+        <label><!-- Users - RS --></label>
+        <name>Users_RS</name>
+        <sections>
+            <label><!-- Users --></label>
+            <name>Users</name>
+        </sections>
+        <sections>
+            <label><!-- Users (Manager) --></label>
+            <name>Users (Manager)</name>
+        </sections>
+    </reportTypes>
+</Translations>

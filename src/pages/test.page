@@ -1,0 +1,8 @@
+<apex:page controller="test" >
+	<script>
+		var x = '{!tabname}';
+		alert (x);
+	</script>
+	 
+	
+</apex:page>

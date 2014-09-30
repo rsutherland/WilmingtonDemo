@@ -1,0 +1,46 @@
+<apex:page controller="azqa" showHeader="false">
+	<apex:includeScript value="{!URLFOR($Resource.easyUI,'jquery.min.js')}"/>
+	<apex:stylesheet value="{!URLFOR($Resource.jqm, 'jquery.mobile-1.4.2.min.css')}"/>		
+	<apex:stylesheet value="{!URLFOR($Resource.jqm, '/css/themes/default/jquery.mobile-1.4.2.min.css')}"/>	
+	<apex:includeScript value="{!URLFOR($Resource.jqm,'jquery.mobile-1.4.2.min.js')}"/>
+
+	<apex:outputPanel id="qa" rendered="{!!solutionFound}">
+
+
+	{!sessionHistory3}		
+<div style="text-align: center; vertical-align: middle; padding-top:20px; padding-bottom:20px; background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #800080">
+<div style="background-image: url('{!$Resource.bubble}'); background-repeat: no-repeat; background-position: center center; height: 154px; ">
+<div style="width: 120px; position: absolute; left: 50%; margin-left: -60px; margin-top: 35px; font-family: Verdana; font-size: 11pt; color: #FFFFFF; font-weight: bold;"  >
+{!currentQuestion}
+</div>
+</div>
+</div>
+<apex:form >
+	
+	<apex:repeat value="{!answers}" var="s">
+		
+		<apex:commandLink action="{!gotoNext}" styleclass="ui-btn" value="{!s.Text__c}" >
+			<apex:param name="nid" value="{!s.Next_Question__c}" assignTo="{!nextQid}"/>
+			<apex:param name="aid" value="{!s.name}" assignTo="{!answerid}"/>
+			<apex:param name="qid" value="{!s.Parent_Question__r.Name}" assignTo="{!questionid}"/>
+		</apex:commandLink>
+
+	</apex:repeat>
+</apex:form></apex:outputPanel>
+<apex:outputPanel id="sol" rendered="{!solutionFound}">
+	<script>
+			$( document ).ready(function() {
+				solution.innerHTML=s1.value;
+			});
+
+
+			
+		</script>
+	<div id="solution" style="background-color:#800080; color: #FFFFFF; padding-top:20px; padding-left:10px; padding-right:10px;">
+	
+	
+	</div>
+<input id="s1" type="hidden" value="{!sol.solution_text__c}"/>
+</apex:outputPanel>
+
+</apex:page>

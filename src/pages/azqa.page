@@ -1,0 +1,34 @@
+<apex:page controller="azqa" showHeader="false">
+	
+	<apex:stylesheet value="{!URLFOR($Resource.easyUI, 'themes/default/easyui.css')}"/>
+	<apex:stylesheet value="{!URLFOR($Resource.easyUI, 'themes/icon.css')}"/>
+		
+	<apex:includeScript value="{!URLFOR($Resource.easyUI,'jquery.min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.easyUI,'jquery.easyui.min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.easyUI,'jquery.min.js')}"/>
+	<apex:stylesheet value="{!URLFOR($Resource.jqm, 'jquery.mobile-1.4.2.min.css')}"/>		
+	<apex:stylesheet value="{!URLFOR($Resource.jqm, '/css/themes/default/jquery.mobile-1.4.2.min.css')}"/>	
+	<apex:includeScript value="{!URLFOR($Resource.jqm,'jquery.mobile-1.4.2.min.js')}"/>
+	<apex:form >
+<body bgcolor="#FFFFFF">
+	
+	<div style="width:100%;padding:10px;text-align: center;background-color: #FFFFFF;border-bottom-style: solid; border-bottom-width: medium; border-bottom-color: #800080;">
+		<apex:image id="theImage" value="{!$Resource.azLogo}" />
+	</div>
+<div style="padding:10px;">
+<apex:repeat value="{!sessions}" var="s">
+	<!--div onclick="javascript:window.navigate('/apex/azqa_qa?id={!s.id}') class="ui-input-btn ui-btn ui-corner-all ui-shadow"-->
+        
+		<a href="/apex/azqa_qa?id={!s.id}" class="ui-btn" >{!s.text__c}</a> 
+        <!--apex:commandLink onclick="window.navigate('/apex/azqa_qa?id={!s.id}')" styleclass="ui-btn" value="{!s.text__c}">
+			<apex:param name="s" value="{!s.id}" assignto="{!sid}"/>
+		</apex:commandLink-->
+    
+
+	
+</apex:repeat>
+
+</div>
+</body>
+</apex:form>
+</apex:page>

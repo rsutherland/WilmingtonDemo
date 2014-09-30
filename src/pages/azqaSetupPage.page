@@ -1,0 +1,102 @@
+<apex:page standardController="Question_Answer__c" extensions="azqa_setup" showHeader="false">
+
+<apex:includeScript value="{!URLFOR($Resource.jqueryui,'external/jquery/jquery.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jqueryui,'jquery-ui.js')}"/>	
+<apex:stylesheet value="{!URLFOR($Resource.jqueryui, 'jquery-ui.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.jqueryui, 'jquery-ui.theme.css')}"/>	
+<style>
+	input[type=checkbox] {  
+	    display: none;  
+	}  
+</style>
+
+<script>
+	function loopForm(form) {
+	    var cbResults = '';
+	    for (var i = 0; i < form.elements.length; i++ ) {
+	        if (form.elements[i].type == 'checkbox') {
+	            if (form.elements[i].checked == true) {
+	                cbResults += form.elements[i].id + ',';
+	            }
+	        }
+	    }
+	    
+	    document.getElementById('{!$component.thisForm.currentKey}').value=cbResults;
+	    updateKeyJS(cbResults);
+	}
+	
+	function setCheck(chkId){
+		if(document.getElementById(chkId).checked){
+			document.getElementById(chkId).checked = false;
+		}else{
+			document.getElementById(chkId).checked = true;
+		}
+		setStyle('div'+chkId,chkId);
+		
+	}
+	
+	function setStyle(divId,chkId){
+		if(document.getElementById(chkId).checked){
+	  		document.getElementById(divId).style.background="#FFFF66";
+	  	}else{
+	  		document.getElementById(divId).style.background="#CCCCCC";
+	  	}
+	}
+	function initGrid(){
+		var keys = document.getElementById('{!$component.thisForm.currentKey}').value.split(',');
+		var arrayLength = keys.length;
+		for (var i = 0; i < arrayLength; i++) {
+		    if (keys[i]!=null){setCheck(keys[i]);}
+		}
+		document.getElementById('save').disabled=true;
+	}
+</script>
+
+<apex:form id="thisForm"> 
+
+
+	<apex:actionFunction action="{!updateKey}" name="updateKeyJS" rerender="thisForm" status="actStatus">
+	 <apex:param name="key" assignTo="{!key}" value=""/>
+    </apex:actionFunction>
+	<apex:inputhidden value="{!Question_Answer__c.parent_solution__r.Session_Name__c}"/>
+	<apex:inputhidden value="{!Question_Answer__c.Session_Name__c}"/>
+	<apex:inputhidden value="{!Question_Answer__c.Solution_Key_2__c}"/>
+	<apex:inputhidden id="currentKey" value="{!theRecord.Solution_Key_2__c}"/>
+	
+	<table cellspacing="0" cellpadding="3" border="0">
+		<tr>
+			<apex:repeat value="{!Questions}" var="q">
+				<td valign="bottom" style="border-bottom-style: solid; border-bottom-color: #C0C0C0; border-bottom-width: 3px">
+					<div style=" font-weight: bold; color: #FFFFFF;height: 50px;background-color: #993399; text-align: center; padding: 5px ;border-radius: 5px; border: 1px solid #C0C0C0; margin: 5px">
+						{!q.Text__c}
+					</div>
+				</td>
+			</apex:repeat>
+		</tr>
+		<tr>
+			<apex:repeat value="{!Questions}" var="q">
+				<td valign="top">
+					
+					<apex:repeat value="{!q.Questions_Answers__r}" var="a">
+						<div onClick="javascript:setCheck('{!q.name}={!a.name}');document.getElementById('save').disabled=false;" id="div{!q.name}={!a.name}" style="background-color: #CCCCCC; text-align: center; padding: 5px ;border-radius: 5px; border: 1px solid #C0C0C0; margin: 5px">
+							<input onChange="javascript:setStyle('div{!q.name}={!a.name}','{!q.name}={!a.name}');document.getElementById('save').disabled=false;" id="{!q.name}={!a.name}" type="checkbox"/><label for="{!q.name}={!a.name}">({!a.Answer_Code__c}) - {!a.Text__c}</label>
+						</div>
+					</apex:repeat>
+				</td>
+			</apex:repeat>
+		</tr>
+	</table>
+	<hr/>
+	<input disabled="true" id="save" style="float:right" type="submit" value="Update Solution Key" onclick="loopForm(document.forms[0]);"/>
+	
+	<script>
+	$( document ).ready(function() {
+    initGrid();
+    
+});
+	</script>
+	
+	</apex:form>
+	<apex:actionStatus stopStyle="" startStyle="background-position:center center;background-repeat:no-repeat;background-image:url('{!$Resource.spinner}');opacity:0.6;height:100%;width:100%;position:fixed;top:0px;left:0px;background-color:white;" layout="block" startText=" " stopText="" id="actStatus"/>
+	
+</apex:page>

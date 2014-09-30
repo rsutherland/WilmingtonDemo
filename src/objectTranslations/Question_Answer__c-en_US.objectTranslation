@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Question &amp; Answer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Questions &amp; Answers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Answer Code --></label>
+        <name>Answer_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Answer Supplied --></label>
+        <name>Answer_Supplied__c</name>
+        <relationshipLabel><!-- Questions &amp; Answers (Answer Supplied) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Next Question --></label>
+        <name>Next_Question__c</name>
+        <relationshipLabel><!-- Next Question --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent Question --></label>
+        <name>Parent_Question__c</name>
+        <relationshipLabel><!-- Answers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent Solution --></label>
+        <name>Parent_Solution__c</name>
+        <relationshipLabel><!-- Solution Keys --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Session Name --></label>
+        <name>Session_Name__c</name>
+        <relationshipLabel><!-- Questions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Solution Key 2 --></label>
+        <name>Solution_Key_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Solution Key --></label>
+        <name>Solution_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Solution Text --></label>
+        <name>Solution_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Text --></label>
+        <name>Text__c</name>
+    </fields>
+    <layouts>
+        <layout>Answer</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Question</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Session</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Solution</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Solution Keys --></label>
+            <section>Solution Keys</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Solution Key</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Key --></label>
+            <section>Key</section>
+        </sections>
+        <sections>
+            <label><!-- Setup Key --></label>
+            <section>Setup Key</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Answer --></label>
+        <name>Answer</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Question --></label>
+        <name>Question</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Session --></label>
+        <name>Session</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Solution --></label>
+        <name>Solution</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Solution Key --></label>
+        <name>Solution_Key</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Supplied Answer --></label>
+        <name>Supplied_Answer</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
