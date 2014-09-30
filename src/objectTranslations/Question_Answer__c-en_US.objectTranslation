@@ -53,57 +53,6 @@
         <label><!-- Text --></label>
         <name>Text__c</name>
     </fields>
-    <layouts>
-        <layout>Answer</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
-    <layouts>
-        <layout>Question</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
-    <layouts>
-        <layout>Session</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
-    <layouts>
-        <layout>Solution</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-        <sections>
-            <label><!-- Details --></label>
-            <section>Details</section>
-        </sections>
-        <sections>
-            <label><!-- Solution Keys --></label>
-            <section>Solution Keys</section>
-        </sections>
-    </layouts>
-    <layouts>
-        <layout>Solution Key</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-        <sections>
-            <label><!-- Key --></label>
-            <section>Key</section>
-        </sections>
-        <sections>
-            <label><!-- Setup Key --></label>
-            <section>Setup Key</section>
-        </sections>
-    </layouts>
     <recordTypes>
         <label><!-- Answer --></label>
         <name>Answer</name>

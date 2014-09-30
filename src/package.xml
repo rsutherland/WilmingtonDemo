@@ -119,7 +119,6 @@
         <members>ContractContactRole</members>
         <members>DandBCompany</members>
         <members>Event</members>
-        <members>Idea</members>
         <members>Lead</members>
         <members>LeadCleanInfo</members>
         <members>Opportunity</members>
